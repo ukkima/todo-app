@@ -7,7 +7,7 @@ import { Filters } from "./components/Filters/Filters";
 
 function App() {
   const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todos") || "") || [],
+    JSON.parse(localStorage.getItem("todos") as string) || [],
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
