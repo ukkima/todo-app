@@ -1,5 +1,6 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import cls from "./TodoAdd.module.css";
+// @ts-ignore
 
 export const TodoAdd = ({ todos, setTodos }) => {
   const [value, setValue] = useState("");

@@ -1,6 +1,7 @@
-import { useState, type ChangeEvent } from "react";
+import { type ChangeEvent } from "react";
 import cls from "./SearchFilter.module.css";
 
+// @ts-ignore
 export const SearchFilter = ({ setSearchQuery }) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);

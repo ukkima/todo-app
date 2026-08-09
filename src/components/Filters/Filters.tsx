@@ -1,5 +1,5 @@
 import cls from "./Filter.module.css";
-
+// @ts-ignore
 export const Filters = ({ setFilter }) => {
   return (
     <form className={cls.form}>

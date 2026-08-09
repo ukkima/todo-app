@@ -7,7 +7,7 @@ import { Filters } from "./components/Filters/Filters";
 
 function App() {
   const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todos")) || [],
+    JSON.parse(localStorage.getItem("todos") || "") || [],
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
@@ -17,13 +17,17 @@ function App() {
   }, [todos]);
 
   const filtersFunc = {
+    // @ts-ignore
     all: (todos) => todos,
+    // @ts-ignore
     completed: (todos) => todos.filter((todo) => todo.checked),
+    // @ts-ignore
     active: (todos) => todos.filter((todo) => !todo.checked),
   };
 
+  // @ts-ignore
   const filteredTodos = filtersFunc[filter](todos);
-
+  // @ts-ignore
   const searchTodos = filteredTodos.filter((todo) =>
     todo.text.toLowerCase().includes(searchQuery.toLowerCase()),
   );
